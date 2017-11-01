@@ -1,0 +1,62 @@
+﻿@model DataModel.student
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="ibox-content">
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="m-b-md">
+                @*<a href="#" class="btn btn-white btn-xs pull-right">Edit project</a>*@
+                @Html.ActionLink(" " , "Index" , "students" , new { id = 1 } , new { @class = "btn btn-white btn-xs pull-right fa fa-arrow-circle-left fa-2x" })
+                <h2>@Model.name @Model.surname</h2>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row m-t-lg">
+        <div class="col-lg-12">
+            <div class="tabs-container">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a data-toggle="tab" href="#tab-demo">Özlük</a></li>
+                    <li class=""><a data-toggle="tab" href="#tab-health">Sağlık</a></li>
+                    <li class=""><a data-toggle="tab" href="#tab-payments">Aidat</a></li>
+                    <li class=""><a data-toggle="tab" href="#tab-performans">Performans</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div id="tab-demo" class="tab-pane active">
+                        
+                            @Html.Partial("./Demographic")
+                       
+                    </div>
+                      <div id="tab-health" class="tab-pane">
+                        @Html.Partial("./Health")
+                    </div>
+
+                    <div id="tab-payments" class="tab-pane">
+                        @Html.Partial("./Payments")
+                    </div>
+                    <div id="tab-performans" class="tab-pane">
+                        @Html.Partial("./Performans")
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/plugins/flot")
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $.plot($("#flot-placeholder"), dataset, options);
+            $("#flot-placeholder").UseTooltip();
+        });
+    </script>
+}

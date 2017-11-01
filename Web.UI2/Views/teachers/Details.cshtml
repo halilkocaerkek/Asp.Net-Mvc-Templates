@@ -1,0 +1,340 @@
+﻿@model DataModel.teacher
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-sm-4">
+        <h2>Details</h2>
+        <ol class="breadcrumb">
+            <li>
+                @Html.ActionLink("List" , "Index")
+            </li>
+            <li class="active">
+                <strong>Details</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+
+
+<style type="text/css">
+    div[class^="col-"] {
+        border: 1px solid black;
+    }
+</style>
+
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-md-4">
+            Resim
+        </div>
+        <div class="col-md-8">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-3">
+                            Adi
+                        </div>
+                        <div class="col-md-3">
+                            Soyadi
+                        </div>
+                        <div class="col-md-3">
+                            Doğum Tarihi
+                        </div>
+                        <div class="col-md-3">
+                            Doğum Yeri
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+
+
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    TCKN
+                                </div>
+                                <div class="col-md-6">
+                                    VKN
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    İşe Giriş
+                                </div>
+                                <div class="col-md-6">
+                                    İşten Çıkış
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    Tel
+                                </div>
+                                <div class="col-md-6">
+                                    CepTel
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    Eposta
+                                </div>
+                                 
+                            </div>
+                        </div>
+                         
+
+                            <div class="col-md-6">
+                                Adres<br /><br /><br />
+                            </div>
+                        
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            4
+                        </div>
+                        <div class="col-md-4">
+                            4
+                        </div>
+                        <div class="col-md-4">
+                            4
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br />
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>Details teacher</h5>
+                </div>
+                <div class="ibox-content">
+
+
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.school.name)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.school.name)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.name)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.name)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.surname)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.surname)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.phone)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.phone)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.imageUrl)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.imageUrl)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.thumbnailUrl)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.thumbnailUrl)
+                        </dd>
+
+                        @*<dt>
+                            @Html.DisplayNameFor(model => model.street)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.street)
+                        </dd>*@
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.city)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.city)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.state)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.state)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.postcode)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.postcode)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.email)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.email)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.gender)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.gender)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.schooladmin)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.schooladmin)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.classadmin)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.classadmin)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.isSchoolAdmin)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.isSchoolAdmin)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.isAcceptPayment)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.isAcceptPayment)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.isViewer)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.isViewer)
+                        </dd>
+
+                    </dl>
+
+
+                    @Html.ActionLink("Edit" , "Edit" , new { id = Model.id } , new { @class = "btn btn-primary" })
+                    @Html.ActionLink("Back to List" , "Index" , null , new { @class = "btn btn-white" })
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@{
+    string panelid = "";
+    string panelref ="";
+    string panelname = "";
+    string partialname = "";
+
+}
+
+<div class="ibox">
+    <div class="ibox-title">
+        <h5>Details teacher</h5>
+    </div>
+    <div class="ibox-content">
+
+        <div class="panel-group payments-method" id="accordion">
+
+            <div class="panel panel-default">
+                @{
+                    panelid = "collapse" + @Html.DisplayNameFor(model => model.classteacher);
+                    panelref = "#collapse" + @Html.DisplayNameFor(model => model.classteacher);
+                    panelname = "" + @Html.DisplayNameFor(model => model.classteacher);
+                    partialname = "..\\" + "classteachers\\partial";
+
+                }
+
+                <div class="panel-heading">
+                    <div class="pull-right">
+                        <i class=" text-success"></i> <!-- icon -->
+                    </div>
+                    <h5 class="panel-title">
+
+                        <a data-toggle="collapse" data-parent="#accordion" href="@panelref">@panelname</a>
+                    </h5>
+                </div>
+                <div id="@panelid" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <div class="row">
+                            @Html.Partial(@partialname , Model.classteacher);
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,104 @@
+﻿@model DataModel.branch
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-sm-4">
+        <h2>Details</h2>
+        <ol class="breadcrumb">
+            <li>
+                @Html.ActionLink("List" , "Index")
+            </li>
+            <li class="active">
+                <strong>Details</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+
+
+
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>Details branch</h5>
+                </div>
+                <div class="ibox-content">
+
+
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.name)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.name)
+                        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.thumbnailUrl)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.thumbnailUrl)
+                        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.isBeltEnabled)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.isBeltEnabled)
+                        </dd>
+                    </dl>
+                    @Html.ActionLink("Edit" , "Edit" , new { id = Model.id } , new { @class = "btn btn-primary" })
+                    @Html.ActionLink("Back to List" , "Index" , null , new { @class = "btn btn-white" })
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Tabs Begin -->
+@{  string panelid = ""; string panelref =""; string panelname = ""; string partialname = "";  }
+
+<div class="tabs-container">
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#tab-belt">belt</a></li>
+ 
+ 
+    </ul>
+    <div class="tab-content">
+
+
+        @{
+            panelid = "collapse" + @Html.DisplayNameFor(model => model.belt);
+            panelref = "#collapse" + @Html.DisplayNameFor(model => model.belt);
+            panelname = "" + @Html.DisplayNameFor(model => model.belt);
+            partialname = "..\\" + "belts\\" + "belt" + "partial";
+
+        }
+        <div id="tab-belt" class="tab-pane active">
+            <div class="panel-body">
+                @Html.Partial(@partialname , Model.belt);
+            </div>
+        </div>
+
+
+        @{
+            panelid = "collapse" + @Html.DisplayNameFor(model => model.schoolbranch);
+            panelref = "#collapse" + @Html.DisplayNameFor(model => model.schoolbranch);
+            panelname = "" + @Html.DisplayNameFor(model => model.schoolbranch);
+            partialname = "..\\" + "schoolbranches\\" + "schoolbranch" + "partial";
+
+        }
+        <div id="tab-schoolbranch" class="tab-pane active">
+            <div class="panel-body">
+                @Html.Partial(@partialname , Model.schoolbranch);
+            </div>
+        </div>
+    </div>
+</div>

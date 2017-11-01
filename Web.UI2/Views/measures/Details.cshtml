@@ -1,0 +1,122 @@
+﻿ @model DataModel.measure
+
+@{
+	ViewBag.Title = "Details";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row wrapper border-bottom white-bg page-heading">
+	<div class="col-sm-4">
+		<h2>Details</h2>
+		<ol class="breadcrumb">
+			<li>
+				@Html.ActionLink("List", "Index")
+			</li>
+			<li class="active">
+				<strong>Details</strong>
+			</li>
+		</ol>
+	</div>
+</div>
+
+
+
+
+<div class="wrapper wrapper-content animated fadeInRight">
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="ibox float-e-margins">
+				<div class="ibox-title">
+					<h5>Details measure</h5>
+				</div>
+				<div class="ibox-content">
+
+
+					<dl class="dl-horizontal">
+		<dt>
+			@Html.DisplayNameFor(model => model.measuretype.Name)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.measuretype.Name)
+		</dd>
+		<dt>
+			@Html.DisplayNameFor(model => model.student.name)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.student.name)
+		</dd>
+		<dt>
+			@Html.DisplayNameFor(model => model.value)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.value)
+		</dd>
+		<dt>
+			@Html.DisplayNameFor(model => model.createdBy)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.createdBy)
+		</dd>
+		<dt>
+			@Html.DisplayNameFor(model => model.createdAt)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.createdAt)
+		</dd>
+    </dl>
+		@Html.ActionLink("Edit", "Edit", new { id = Model.id }, new { @class = "btn btn-primary"})
+	@Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-white"})
+				</div>
+			</div>
+		</div>
+	</div>
+ </div>
+<!-- Tabs Begin -->
+	@{  string panelid = ""; string panelref =""; string panelname = ""; string partialname = "";  }
+
+<div class="tabs-container">
+	<ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#tab-measuretype.Name">measuretype.Name</a></li>
+ <li class="active"><a data-toggle="tab" href="#tab-student.name">student.name</a></li>
+ <li class="active"><a data-toggle="tab" href="#tab-value">value</a></li>
+ <li class="active"><a data-toggle="tab" href="#tab-createdBy">createdBy</a></li>
+ <li class="active"><a data-toggle="tab" href="#tab-createdAt">createdAt</a></li>
+</ul>
+ <div class="tab-content">
+  
+
+				@{
+					 panelid = "collapse" + @Html.DisplayNameFor(model => model.measuretype.Name);
+					 panelref = "#collapse" +  @Html.DisplayNameFor(model => model.measuretype.Name);
+					panelname = ""+  @Html.DisplayNameFor(model => model.measuretype.Name);
+					partialname = "..\\"+ "measuretype.Name\\" + "measuretype.Name"+"partial";
+					modelname = "Model." +"measuretype.Name";
+				}
+					<div id="tab-measuretype.Name" class="tab-pane active">
+						<div class="panel-body">
+							@Html.Partial(@partialname,Model.measuretype.Name);  
+						</div>
+					</div>
+ 
+
+				@{
+					 panelid = "collapse" + @Html.DisplayNameFor(model => model.student.name);
+					 panelref = "#collapse" +  @Html.DisplayNameFor(model => model.student.name);
+					panelname = ""+  @Html.DisplayNameFor(model => model.student.name);
+					partialname = "..\\"+ "student.name\\" + "student.name"+"partial";
+					modelname = "Model." +"student.name";
+				}
+					<div id="tab-student.name" class="tab-pane active">
+						<div class="panel-body">
+							@Html.Partial(@partialname,Model.student.name);  
+						</div>
+					</div>
+	</div>
+</div>
+ 
+

@@ -1,0 +1,35 @@
+﻿<#@ template debug="false" hostspecific="true" language="C#" #>
+<#@ assembly Name="EnvDTE" #>
+<#@ Import Namespace="EnvDTE" #>
+<#@ Import Namespace="System.IO" #>
+<#@ import namespace="System.Globalization" #>
+<#@ import namespace="EnvDTE" #>
+<#+
+
+
+	public string getPluralClassName(string classname)
+    {
+		if(classname.EndsWith("y"))
+        {
+			return string.Format("{0}ies",classname.Substring(0,classname.Length-1));
+        }
+		return string.Format("{0}s",classname);
+    }
+
+        
+    //Naming
+    public string GetProperClassName(string className)
+    {
+        string returnString = className.ToLower();
+        returnString = returnString.Replace("_", " ");
+        TextInfo ti = CultureInfo.CurrentCulture.TextInfo;  
+        returnString = ti.ToTitleCase(returnString);
+        returnString = returnString.Replace(" ", "");
+        return returnString;
+    }
+
+    private static string CharToUpper(string input, int position)
+    {
+        return input.First().ToString().ToUpper() + input.Substring(position+1);
+    }
+#>

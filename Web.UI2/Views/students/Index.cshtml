@@ -1,0 +1,46 @@
+﻿@using DataModel;
+@using PagedList.Mvc;
+@using PagedList;
+@model IEnumerable<DataModel.student>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-sm-12">
+        <ol class="breadcrumb">
+            <li class="active">
+                <strong>Öğrenciler</strong>
+            </li>
+        </ol>
+        <div class="ibox-tools">
+
+            @*<i class="fa fa-wrench"></i>*@
+            @Html.ActionLink(" " , "Details" , "schools" , new { id = 1 } , new { @class = "fa fa-arrow-circle-left fa-2x" })
+
+        </div>
+    </div>
+
+</div>
+
+
+
+@foreach ( student item in Model )
+{
+
+    <div class="col-lg-3">
+        <a href="@Url.Action("Details" , "students" , new { id = item.id })">
+            <div class=" center-version widget style1 lazur-bg">
+
+                <img alt="image" class="img-circle" src="@Html.DisplayFor(modelItem => item.thumbnailUrl)">
+                <h3 class="m-b-xs"><strong>@Html.DisplayFor(modelItem => item.name) @Html.DisplayFor(modelItem => item.surname)</strong></h3>
+            </div>
+        </a>
+    </div>
+
+}
+
+
+

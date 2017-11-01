@@ -1,0 +1,170 @@
+﻿@model DataModel.schoolbranch
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-sm-4">
+        <h2>Details</h2>
+        <ol class="breadcrumb">
+            <li>
+                @Html.ActionLink("List", "Index")
+            </li>
+            <li class="active">
+                <strong>Details</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+
+
+
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>Details schoolbranch</h5>
+                </div>
+                <div class="ibox-content">
+
+
+				    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.branch.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.branch.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.school.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.school.name)
+        </dd>
+
+    </dl>
+
+
+	    @Html.ActionLink("Edit", "Edit", new { id = Model.id }, new { @class = "btn btn-primary"})
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-white"})
+
+                </div>
+            </div>
+        </div>
+    </div>
+ </div>
+
+
+                @{
+                    string panelid = "";
+                    string panelref ="";
+                    string panelname = "";
+                    string partialname = "";
+                    string modelname = "";
+                }
+
+ <div class="ibox">
+    <div class="ibox-title">
+        <h5>Details schoolbranch</h5>
+    </div>
+    <div class="ibox-content">
+
+        <div class="panel-group payments-method" id="accordion">
+
+
+            
+ 
+
+             <div class="panel panel-default">
+                @{
+                     panelid = "collapse" + @Html.DisplayNameFor(model => model.branch.name);
+                     panelref = "#collapse" +  @Html.DisplayNameFor(model => model.branch.name);
+                    panelname = ""+  @Html.DisplayNameFor(model => model.branch.name);
+                    partialname = "..\\"+ "branch.name\\" + "branch.name"+"partial";
+                    modelname = "Model." +"branch.name";
+                }
+
+                <div class="panel-heading">
+                    <div class="pull-right">
+                        <i class=" text-success"></i> <!-- icon -->
+                    </div>
+                    <h5 class="panel-title">
+
+                        <a data-toggle="collapse" data-parent="#accordion" href="@panelref">@panelname</a>
+                    </h5>
+                </div>
+                <div id="@panelid" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <div class="row">
+                       @Html.Partial(@partialname,"Model.branch.name");     
+                           
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+           
+ 
+
+             <div class="panel panel-default">
+                @{
+                     panelid = "collapse" + @Html.DisplayNameFor(model => model.school.name);
+                     panelref = "#collapse" +  @Html.DisplayNameFor(model => model.school.name);
+                    panelname = ""+  @Html.DisplayNameFor(model => model.school.name);
+                    partialname = "..\\"+ "school.name\\" + "school.name"+"partial";
+                    modelname = "Model." +"school.name";
+                }
+
+                <div class="panel-heading">
+                    <div class="pull-right">
+                        <i class=" text-success"></i> <!-- icon -->
+                    </div>
+                    <h5 class="panel-title">
+
+                        <a data-toggle="collapse" data-parent="#accordion" href="@panelref">@panelname</a>
+                    </h5>
+                </div>
+                <div id="@panelid" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <div class="row">
+                       @Html.Partial(@partialname,"Model.school.name");     
+                           
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+ 
+

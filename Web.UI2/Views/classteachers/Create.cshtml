@@ -1,0 +1,106 @@
+﻿@model DataModel.classteacher
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-sm-4">
+        <h2>Create</h2>
+        <ol class="breadcrumb">
+            <li>
+                @Html.ActionLink("List", "Index")
+            </li>
+            <li class="active">
+                <strong>Create</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-sm-8">
+        <div class="title-action">
+			@Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary"})
+        </div>
+    </div>
+</div>
+
+
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>Create classteacher</h5>
+                </div>
+                <div class="ibox-content">
+
+				@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.classid, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.classid)
+                @Html.ValidationMessageFor(model => model.classid)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.teacherid, "teacherid", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("teacherid", String.Empty)
+                @Html.ValidationMessageFor(model => model.teacherid)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.isClassAdmin, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.isClassAdmin)
+                @Html.ValidationMessageFor(model => model.isClassAdmin)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.isAcceptPayment, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.isAcceptPayment)
+                @Html.ValidationMessageFor(model => model.isAcceptPayment)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.isViewer, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.isViewer)
+                @Html.ValidationMessageFor(model => model.isViewer)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-primary" />
+				@Html.ActionLink("Cancel", "Index", null, new { @class = "btn btn-white"})
+            </div>
+        </div>
+    </div>
+}
+
+                </div>
+            </div>
+        </div>
+    </div>
+ </div>
+
+ 
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+ 
+

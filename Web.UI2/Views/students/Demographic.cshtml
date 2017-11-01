@@ -1,0 +1,67 @@
+﻿@model DataModel.student
+
+
+<div class="row">
+
+    <div class="col-lg-9">
+        <dl class="dl-horizontal">
+
+            <dt>
+                @Html.DisplayNameFor(model => model.phone)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.phone)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.street)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.street)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.city)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.city)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.state)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.state)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.postcode)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.postcode)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.email)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.email)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.gender)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.gender)
+            </dd>
+
+
+
+        </dl>
+    </div>
+    <div class="col-lg-3">
+        <img alt="image" class="img-responsive" src="@Model.imageUrl">
+    </div>
+</div>

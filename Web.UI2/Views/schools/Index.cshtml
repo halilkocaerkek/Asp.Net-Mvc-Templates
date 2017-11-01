@@ -1,0 +1,41 @@
+﻿
+
+@using DataModel;
+@using PagedList.Mvc;
+@using PagedList;
+@model IEnumerable<DataModel.school>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-sm-12">
+        <ol class="breadcrumb">
+            <li class="active">
+                <strong>Okullar</strong>
+            </li>
+        </ol>
+        <div class="ibox-tools">
+
+            @*<i class="fa fa-wrench"></i>*@
+            @Html.ActionLink(" " , "Dashboard" , "Home" , new { id = 1 } , new { @class = "fa fa-arrow-circle-left fa-2x" })
+
+        </div>
+    </div>
+</div>
+
+@foreach ( school item in Model )
+{
+
+    <div class="col-lg-3">
+        <a href="@Url.Action("Details" , "schools" , new { id = item.id })">
+            <div class="center-version widget style1 yellow-bg">
+                 
+                <h3 class="m-b-xs"><strong>@Html.DisplayFor(modelItem => item.name)  </strong></h3>
+            </div>
+        </a>
+    </div>
+
+}
